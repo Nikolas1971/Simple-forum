@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>About</h1>
+    <hr>
+    <p>You've logined as: <b>{{user}}</b>. Nice to see you!</p>
+    <hr>
+    <p>This simple forum made by Nikolay Chernyy (Nikolas1971 on 
+        <a href="https://github.com/Nikolas1971">GitHub</a> )
+        with the help of Django framework and PostgreSQL database.</p>
+    <p>I use libraries:</p>
+        <li>asgiref==3.5.2</li>
+        <li>Django==4.1.2</li>
+        <li>django-crispy-forms==1.14.0</li>
+        <li>Pillow==9.2.0</li>
+        <li>psycopg2==2.8.4</li>
+        <li>psycopg2-binary==2.8.4</li>
+        <li>sqlparse==0.4.3</li>
+    <hr>
+    <p>This forum can provide such user actions as:</p>
+        <li>Add new user, login and logout</li>
+        <li>Add, remove and edit posts</li>
+        <li>Add comments to the post</li>
+{% endblock %}

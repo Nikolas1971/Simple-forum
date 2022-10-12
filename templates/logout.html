@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h4>You are logout</h4>
+
+    <hr>
+    <small class="text-muted">
+        Do you want to <a href="{% url 'login' %}">Login?</a>
+    </small>
+{% endblock  %}

@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Detail post</h1>
+    <table><tr>
+        {% if user.is_authenticated %}
+            <td><a href="{% url 'update_post' post.pk %}" class="btn btn-primary">Edit</a></td>
+            <td><a href="{% url 'delete_post' post.pk %}" class="btn btn-danger">Delete</a></td>
+            <td><a href="{% url 'add_comment' post.pk %}" class="btn btn-info">Add comment</a></td>
+        {% endif %}
+    </tr></table>
+    <hr>
+    {% if post.comments.all %}
+        <h4>Comments</h4>
+        {% for comment in post.comments.all %}
+            <p>{{comment.describtion}} - {{comment.created_at}}</p>
+            <hr>
+        {% endfor %}
+    {% endif %}
+    <strong>{{post.title}}</strong>
+    <p>{{post.created_at}}</p>
+    <p>{{post.describtion}}</p>
+    <hr>
+    {% if post.image %}
+        <img src={{post.image.url}} class="img-fluid" alt="Responsive image">
+    {% endif %}
+{% endblock  %}
